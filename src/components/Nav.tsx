@@ -1,9 +1,26 @@
+import { ConnectButton, lightTheme } from "thirdweb/react";
+import { client, chain } from "../app/client";
+
 export default function Nav() {
   return (
-    <div className="flex justify-center">
-      <div className="m-5">apple</div>
-      <div className="m-5">apple</div>
-      <div className="m-5">apple</div>
+    <div className="flex justify-end m-2">
+      <ConnectButton
+        client={client}
+        connectButton={{
+          label: "Login",
+        }}
+        theme={lightTheme({
+          colors: {
+            primaryButtonBg: "white",
+            primaryButtonText: "black",
+          },
+        })}
+        // https://playground.thirdweb.com/connect/account-abstraction
+        accountAbstraction={{
+          chain,
+          sponsorGas: true,
+        }}
+      />
     </div>
   );
 }

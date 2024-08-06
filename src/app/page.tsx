@@ -1,7 +1,18 @@
 "use client";
-import { redirect } from "next/navigation";
-import { useActiveAccount } from "thirdweb/react";
+import Nav from "../components/Nav";
+import BlueButton from "../components/BlueButton";
+import RedButton from "@/components/RedButton";
 
 export default function Home() {
-  useActiveAccount() ? redirect("/play") : redirect("/login");
+  return (
+    <div className="flex flex-col h-screen">
+      <Nav />
+      <div className="flex flex-1 justify-center items-center">
+        <div className="flex flex-col gap-4 md:flex-row">
+          <BlueButton />
+          <RedButton />
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  background-color: antiquewhite;
+}
+
+/* https://awesome-button.caferati.me/ */
+.aws-btn {
+  height: 275px !important;
+  width: 250px !important;
+  font-size: 5em !important;
+  --button-default-border-radius: 50px !important;
+  --button-raise-level: 25px !important;
+  --button-hover-pressure: 2 !important;
+  --transform-speed: 0.25s !important;
+
+  /* --button-primary-color-light: #ffe11d !important;
+  --button-primary-color: #00b8c4 !important;
+  --button-primary-color-dark: #8b00d0 !important;
+  --button-primary-color-hover: #1100ab !important;
+  --button-primary-color-active: #913000 !important; */
+}
