@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AwesomeButtonProgress } from "react-awesome-button";
 import "react-awesome-button/dist/styles.css";
 import { TransactionButton } from "thirdweb/react";
 import { prepareContractCall } from "thirdweb";
@@ -8,15 +7,17 @@ import { contract } from "../app/client";
 export default function BlueButton() {
   const [number, setNumber] = useState(0);
 
-  const handleClick = async (event: any, next: any) => {
-    setNumber(number + 1);
-    next();
-  };
-
   return (
     <>
       {/* https://portal.thirdweb.com/typescript/v5/transactions/prepare */}
       <TransactionButton
+        unstyled
+        className="flex flex-col items-center justify-center
+          text-8xl text-white w-60 h-60 bg-blue-400 rounded-3xl cursor-pointer
+          [box-shadow:0_15px_0_0_#1b6ff8,0_25px_0_0_#1b70f841]
+          duration-150
+          active:translate-y-2
+          active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841]"
         transaction={() => {
           const tx = prepareContractCall({
             contract,
@@ -35,20 +36,8 @@ export default function BlueButton() {
           console.error("Transaction error", error);
         }}
       >
-        123
-      </TransactionButton>
-
-      <AwesomeButtonProgress
-        type="primary"
-        loadingLabel=""
-        resultLabel=""
-        releaseDelay={100}
-        onPress={(event, next) => {
-          handleClick(event, next);
-        }}
-      >
         {number}
-      </AwesomeButtonProgress>
+      </TransactionButton>
     </>
   );
 }
