@@ -1,5 +1,9 @@
 # Clack
 
+# Play
+
+https://clack.on-fleek.app
+
 # Dev
 
 Starter template to build an onchain react native app with [thirdweb](https://thirdweb.com/) and [next](https://nextjs.org/).
