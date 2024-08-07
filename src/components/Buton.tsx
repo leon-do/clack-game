@@ -4,7 +4,7 @@ import { TransactionButton } from "thirdweb/react";
 import { prepareContractCall } from "thirdweb";
 import { contract } from "../app/client";
 
-export default function RedButton() {
+export default function Button() {
   const [number, setNumber] = useState(0);
 
   return (

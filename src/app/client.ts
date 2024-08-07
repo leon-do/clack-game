@@ -19,7 +19,7 @@ export const chain = baseSepolia;
 // https://portal.thirdweb.com/references/typescript/v5/prepareContractCall
 export const contract = getContract({
   client,
-  address: "0xcB0cbcE06860f6C30C62560f5eFBF918150e056E",
+  address: "0x3a8A85A6122C92581f590444449Ca9e66D8e8F35",
   chain,
   abi: [
     {
@@ -30,15 +30,28 @@ export const contract = getContract({
       type: "function",
     },
     {
-      inputs: [],
-      name: "number",
-      outputs: [
+      anonymous: false,
+      inputs: [
         {
+          indexed: false,
+          internalType: "address",
+          name: "player",
+          type: "address",
+        },
+        {
+          indexed: false,
           internalType: "uint256",
-          name: "",
+          name: "number",
           type: "uint256",
         },
       ],
+      name: "Incremented",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "number",
+      outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
       stateMutability: "view",
       type: "function",
     },
