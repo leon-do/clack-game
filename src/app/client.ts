@@ -57,3 +57,9 @@ export const contract = getContract({
     },
   ],
 });
+
+export const goldskyUrl = "https://api.goldsky.com/api/public/project_clvtxueu97rs401x05mh991np/subgraphs/increment-base-sepolia/1.0.0/gn"
+
+export const goldskyQuery = "query Query { incrementeds(orderBy: timestamp_, orderDirection: desc) { number player timestamp_ transactionHash_ } }"
+
+export const etherscanUrl = "https://sepolia.basescan.org"

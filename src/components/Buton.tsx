@@ -1,12 +1,9 @@
-import { useState } from "react";
 import "react-awesome-button/dist/styles.css";
 import { TransactionButton } from "thirdweb/react";
 import { prepareContractCall } from "thirdweb";
 import { contract } from "../app/client";
 
 export default function Button() {
-  const [number, setNumber] = useState(0);
-
   return (
     <>
       {/* https://portal.thirdweb.com/typescript/v5/transactions/prepare */}
@@ -36,7 +33,7 @@ export default function Button() {
           console.error("Transaction error", error);
         }}
       >
-        {number}
+        +
       </TransactionButton>
     </>
   );
